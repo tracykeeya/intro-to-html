@@ -1,0 +1,8 @@
+student tracy trust
+device apple
+
+student afra naaka
+device dell
+
+student terry
+device hp
