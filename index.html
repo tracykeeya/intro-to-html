@@ -1,22 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cohort 16</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0
+      background-color: black; 
+    }
+
+
+    img {
+      vertical-align: middle;
+    }
+
+    .mySlides {
+      display: none
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: lightskyblue;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+      background-color: black;
+    }
+
+    .img34{
+      border-radius: 50%;
+      background-color: black;
+      color: black;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: black;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+    .links {
+        margin: 20px 20px;
+        padding-top: 10px;
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+    }
+    footer{
+      text-align: center;
+      color: lightskyblue;
+      position: centre;
+      bottom: 0%;
+      width: 60% 60%;
+      background-color: black;
+      padding: 1px;
+      
+    }
+  </style>
 </head>
+
 <body>
-    <h1>This is my heading</h1>
-    <p>This is my first heading</p>
-    <img src="image.png" alt="church image" height="500px"></img>
-    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRSC53P9idZI2bO1VMd6dPqjlN_zxwjJ5SLV7eh_v2oxegclsn8BDaN0tukzS7zQv32AEKKQ1gn2crobjQhHrPQi7TD3Zh-3afegt3gHrmiHtXSKkRb22mI&usqp=CAc" alt="flower" height="500px"></img>
-<a href="flower.html">flower page</a>
+  <div class="links">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="services.html">Services</a> |
+    <a href="contact.html">Contact</a> 
+  </div>
 
 
+  <div class="slideshow-container">
 
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/web.jpg" style="width:100%">
+      <div class="text">Welcome friends !.This is why l tell you about me</div>
+      <img class="img34" src="images/nw.jpg" alt="me" height="200px" width="200px">
+    </div>
 
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/terry.jpg" style="width:100%">
+      <div class="text">TRACY'S WEBSITE</div>
+    </div>
 
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/image.png" style="width:100%">
+      <div class="text">FULL STACK WEB DEVELOPER</div>
+    </div>
 
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
 
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+
+<footer>
+  <p>&copy; copyright@ 2024 Tracy</p>
+</footer>
 </body>
+
 </html>

@@ -1,21 +1,57 @@
 body{
-background-color:aqua;
+background-color:;
 }
-h1{
-color:brown;
+h1,h2{
+color:lightblue;
 text-align: center;
 }
 img{
-  border-radius: 50%;  
+  border-radius: 100%;  
 }
 
-
-
-h2,h3{
-    color:brown;
+h3,p{
+  color: lightblue;
 }
 
+footer{
+  text-align: center;
+  color: lightskyblue;
+  position: center;
+  background-color: black;
+  bottom: 0%;
+  widith: 100%;
+  padding: 1px;
+}
 
+/*services page*/
+* {
+  box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 30px;
+  height: 50%;
+  background-color: black;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  background-color: black;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column  {
+    width: 50%;
+    height: 50%;
+  }
+}
 
 
 
